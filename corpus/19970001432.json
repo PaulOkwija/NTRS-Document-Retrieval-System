@@ -1,0 +1,6 @@
+{
+    "id": 19970001432,
+    "subjectCategory": "Electronics and Electrical Engineering",
+    "title": "Thermal Control Subsystem Design for the Avionics of a Space Station Payload",
+    "abstract": "A case study of the thermal control subsystem development for a space based payload is presented from the concept stage through preliminary design. This payload, the Space Acceleration Measurement System 2 (SAMS-2), will measure the acceleration environment at select locations within the International Space Station. Its thermal control subsystem must maintain component temperatures within an acceptable range over a 10 year life span, while restricting accessible surfaces to touch temperature limits and insuring fail safe conditions in the event of loss of cooling. In addition to these primary design objectives, system level requirements and constraints are imposed on the payload, many of which are driven by multidisciplinary issues. Blending these issues into the overall system design required concurrent design sessions with the project team, iterative conceptual design layouts, thermal analysis and modeling, and hardware testing. Multiple tradeoff studies were also performed to investigate the many options which surfaced during the development cycle."
+}
