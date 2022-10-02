@@ -1,2 +1,2 @@
-# NTRS-Document-Retrieval-System
-Over 50% of the NASA Technical Reports Server (NTRS) documents are legacy documents that were obtained by scanning and using Optical Character Recognition (OCR). These documents are difficult to access and discover in the NTRS. We have developed an AI-based web application that utilizes Natural Language Processing (NLP) to automatically read these documents, summarize them, generate text analytic data, and produce a list of topic keywords to help researchers find these documents within the NTRS. This improves the accessibility and discoverability of these documents for both scientific and historical researchers.
+# NASA_SPACE_APPS_CHALLENGE
+ This is the implementation of the data retrieval system for the NASA Technical Reports Server (NTRS)

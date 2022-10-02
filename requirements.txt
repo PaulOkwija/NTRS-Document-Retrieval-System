@@ -1,0 +1,10 @@
+streamlit
+numpy
+pandas
+PyPDF2
+gensim
+pdfminer
+spacy
+flashtext
+plotly
+nltk
