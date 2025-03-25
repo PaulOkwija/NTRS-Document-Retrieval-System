@@ -1,3 +1,7 @@
+######################
+# Import libraries
+######################
+
 import os
 import json
 import PyPDF2
@@ -18,15 +22,19 @@ from itertools import compress
 from gensim import similarities
 from collections import defaultdict
 
-from analytics import *
-from retrieval_system import *
-from get_title_and_abstract import *
+from utils import *
+
+
+
+######################
+# Page Setup
+######################
 
 # Streamlit import
 import streamlit as st  # 🎈 data web app development
 # from streamlit import caching
 
-###################################################### Streamlit App ######################################################
+
 # Setting up page
 st.set_page_config(
     page_title="NTRS Document Retrieval System",
@@ -84,8 +92,9 @@ srch_button = st.button("Search")
 # update_corpus = st.button("Update corpus")
 
 
-
-#%%
+#############################
+# Custom function definitions
+#############################
 
 @st.cache_data()
 def get_nltk_resources():
@@ -144,22 +153,22 @@ def clean_docs(docs):
         for text in texts
     ]
 
-    np.save('document_tracker.npy', np.array(document_tracker, dtype=object))
+    np.save('data/document_tracker.npy', np.array(document_tracker, dtype=object))
     return texts
 
 
 @st.cache_data
 def create_model(texts, num_topics=5):
     dictionary = corpora.Dictionary(texts)
-    with open('dictionary.pickle', 'wb') as handle:
+    with open('data/dictionary.pickle', 'wb') as handle:
         pickle.dump(dictionary, handle)
 
     corpus = [dictionary.doc2bow(text) for text in texts]
     np_corpus = np.array(corpus, dtype=object)
-    np.save('corpus.npy', corpus)
+    np.save('data/corpus.npy', corpus)
     
     lsi = models.LsiModel(corpus, id2word=dictionary, num_topics=num_topics)
-    lsi.save('lsi.model')
+    lsi.save('model_files/lsi.model')
     return
 
 
@@ -222,29 +231,22 @@ selected_topics = list(compress(subject_categories, selected_topics))
 corpus_folder = 'corpus'
 
 
-# if update_corpus:
-#     docs = get_docs(dataset_folder)
-#     with open('document_dictionary.pickle', 'wb') as handle:
-#         pickle.dump(docs, handle)
-    
-#     texts = clean_docs(docs)
-
-#     num_topics = 5
-#     create_model(texts, num_topics=num_topics)
-
-
-lsi = models.LsiModel.load("lsi.model")
-corpus = list(np.load('corpus.npy', allow_pickle=True))
-with open('dictionary.pickle', 'rb') as handle:
+lsi = models.LsiModel.load("model_files/lsi.model")
+corpus = list(np.load('data/corpus.npy', allow_pickle=True))
+with open('data/dictionary.pickle', 'rb') as handle:
     dictionary = pickle.load(handle)
 
 
-doc_tracker = list(np.load('document_tracker.npy', allow_pickle=True))
-with open('document_dictionary.pickle', 'rb') as handle:
+doc_tracker = list(np.load('data/document_tracker.npy', allow_pickle=True))
+with open('data/document_dictionary.pickle', 'rb') as handle:
     document_dictionary = pickle.load(handle)
 
 # st.write(docs)
 # st.write(texts)
+
+##################################
+# Search and present top 5 results
+##################################
 
 if srch_button or query:
     st.write("Search Results")

@@ -1,4 +1,8 @@
-"""Get title and abstract from pdf"""
+##################################
+#Imports
+##################################
+import PyPDF2
+from gensim import similarities
 import pdfminer
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
@@ -10,8 +14,52 @@ from pdfminer.layout import LAParams
 from pdfminer.converter import PDFPageAggregator
 from flashtext import KeywordProcessor
 
-KEY_PRO = KeywordProcessor(case_sensitive=False)
+##################################
+#Analytics
+##################################
+def get_analytics(filename, keywords):
+	with open(filename,'rb') as f:
+		f = PyPDF2.PdfFileReader(f)
+		text = ''
+		for page in f.pages:
+			text = text + ' ' + page.extractText()
 
+	word_count = {}
+	for word in keywords:
+		print("\n")
+		print(word)
+		print('\n')
+		count = text.count(word)
+		word_count[word] = count
+	
+	return word_count
+
+
+
+##################################
+#Retrieval function
+##################################
+def search_docs(query, lsi, dictionary, corpus):
+    vec_bow = dictionary.doc2bow(query.lower().split())
+    vec_lsi = lsi[vec_bow]  # convert the query to LSI space
+    vec_lsi = sorted(vec_lsi, key=lambda i: i[-1], reverse=True)
+    print("\nvec_lsi\n", vec_lsi)
+    index = similarities.MatrixSimilarity(lsi[corpus])  # transform corpus to LSI space and index it
+
+    # index.save('/tmp/deerwester.index')
+    # index = similarities.MatrixSimilarity.load('/tmp/deerwester.index')
+
+    sims = index[vec_lsi]  # perform a similarity query against the corpus
+    # print(list(enumerate(sims)))  # print (document_number, document_similarity) 2-tuples
+
+    sims = sorted(enumerate(sims), key=lambda item: -item[1])
+    
+    return sims, vec_lsi
+
+
+##################################
+#Title and Abstract functions
+##################################
 def list_to_string(listvalue):
     """list to string function"""
     my_string = ' '.join(listvalue)
@@ -46,6 +94,7 @@ def get_text(pdf_file):
 
 def get_abstract(textdata):
     """get abs related content"""
+    KEY_PRO = KeywordProcessor(case_sensitive=False)
     data = []
     doi_num = []
     words = ['A B S T R A C T    _', 'a b s t r a c t_', 'abstract', 'abstract:', 'Abstract:']
