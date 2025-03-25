@@ -1,49 +1,38 @@
-# NASA_SPACE_APPS_CHALLENGE
- This is the implementation of the document retrieval system for the NASA Technical Reports Server (NTRS) for the 2022 NASA Space Apps challenge
-Corpus
+# NASA_SPACE_APPS_CHALLENGE 2022 
 
-Given the large number of documents in the NTRS, we use the NASA NTRS OpenAPI to automatically download legacy documents instead of manually navigating the database. This saves time and is more efficient.
+![Our_profile](images/nasa_profile.jpg)
+## 🌎 CHALLENGE: CAN AI preserve our Science Legacy
+The NASA Technical Report Server (NTRS) includes hundreds of thousands of items containing scientific and technical information (STI) created or funded by NASA. Imagine how difficult it can be to locate desired information in such a large repository! Your challenge is to develop a technique using Artificial Intelligence (AI) to improve the accessibility and discoverability of records in the public NTRS.
 
-We download documents belonging to 3 randomly chosen broad topics. For each broad subject category, we randomly select 2 specific subject categories. We follow the existing NASA STI Scope and Subject Category Guide when selecting these categories.
+## OUR SOLUTION: NASA NTRS DOCUMENT RETRIEVAL SYSTEM
+Over 50% of the NASA Technical Reports Server (NTRS) documents are legacy documents that were obtained by scanning and using Optical Character Recognition (OCR). These documents are difficult to access and discover in the NTRS. We developed an AI-based web application that utilizes Natural Language Processing (NLP) to automatically read these documents, summarize them, generate text analytic data, and produce a list of topic keywords to help researchers find these documents within the NTRS. This improves the accessibility and discoverability of these documents for both scientific and historical researchers.
+![Our_profile](images/nasa1.png)
 
-For each document in the corpus, the corresponding metadata such as document id, title, and abstract are saved in JSON files.
+### ️💻 Technology stack
 
-Assigning keywords to documents
+The project was developed using the following technologies:
+- Python
+- Streamlit
+- Gensim
+- PyPDF
+- NLTK
+- Numpy
+- Pandas
+- Pdfminer
+- Spacy
+- Flashtext
 
-Since each document in the NTRS has a subject category assigned to it, we obtain the corresponding keywords for that subject category. For each document in a given category, we assign the relevant keywords by finding the similarity between the document and all the keywords in that category. The keywords are then added to the corresponding JSON files.
+### Data
+We used data from the [NASA Technical Report Server](https://ntrs.nasa.gov/search?center=CDMS) which provided records to thousands of documents and reports. We used these documents to create a corpus, which was used to develop the retrieval, text summarization and analytics systems.
 
-Web application
+We also used the NASA [NTRS OpenAPI](https://ntrs.nasa.gov/api/openapi/) to automatically download the 60 documents based on subject category.
 
-We then developed a web-based application integrated with Natural language processing algorithms that can retrieve documents from the National Technical Report Server based on a query. The application has two features: the filter feature and the search feature.
-
-The filter feature allows the user to filter the documents based on the subject categories. The search feature allows a user to input a query into a search bar and tap the search button to retrieve documents based on that query.
-
-The titles, abstracts or summaries, keywords, and text analytics of the retrieved documents are then displayed on the web application interface.
-
-
-
-Back-End
-
-The back-end consists of three systems: the retrieval system, the text summarization system, and the text analytics system. These systems utilize natural language processing techniques to perform their respective tasks.
-
-For the filter feature, the retrieval system returns all documents belonging to the selected subject category. For the search feature, the retrieval system compares the query with all the documents in the corpus by calculating a similarity score between the query vector and the corpus vector.
-
-The text summarization system extracts the abstract for the returned documents. If the document does not have an abstract, the system generates an abstract for the document.
-
-The text analytics system analyzes the contents of the whole document and retrieves relevant keywords, topics, and other related analytic information. 
-
-Front-End
-
-The web application, with which users interface, was created using stream-lit to provide a user-friendly way of utilizing our solution. The image below shows the appearance of the interface before a query is made.
+### 🤝 Team
+Solution made by **Galactic Space Coders 🛰️**:
+- [👨‍🎨 Augustine Tuhimbise](https://www.linkedin.com/in/augustine2018/)
+- [👷‍♂️ Alvin B. Kimbowa](https://github.com/alvinkimbowa)
+- [👷‍♂️ Paul O. Mugume](https://github.com/PaulOkwija)
 
 
 
-After a query is made the results are displayed on the web interface as shown in the image below.
 
-
-
-Our solution improves the accessibility and discoverability of legacy documents by providing relevant information such as keywords, subject topics, abstracts, and summaries that guide researchers to find the desired information.
-
-Future Work 
-
-We intend to include a feature that translates the document summaries into African languages so as to encourage more Africans into space research. We shall also extract images from these documents to generate a simple animation returned besides the abstract/summary to give researchers more insights into the documents.
