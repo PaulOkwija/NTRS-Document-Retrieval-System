@@ -1,13 +1,33 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jul 26 12:59:38 2022
+import os
+import json
+import PyPDF2
+import pickle
+import numpy as np  # np mean, np random
+import pandas as pd  # read csv, df manipulation
+import plotly.express as px  # interactive charts
 
-@author: ALVIN
-"""
-#%%
+from PyPDF2 import PdfReader
+
+import nltk
+from nltk.probability import FreqDist
+
+
+from gensim import models
+from gensim import corpora
+from itertools import compress
+from gensim import similarities
+from collections import defaultdict
+
+from analytics import *
+from retrieval_system import *
+from get_title_and_abstract import *
+
+# Streamlit import
 import streamlit as st  # 🎈 data web app development
 # from streamlit import caching
 
+###################################################### Streamlit App ######################################################
+# Setting up page
 st.set_page_config(
     page_title="NTRS Document Retrieval System",
     # page_icon="✅",
@@ -15,7 +35,7 @@ st.set_page_config(
     layout="wide",
 )
 
-# %%
+
 # Remove whitespace from the top of the page and sidebar
 st.markdown("""
         <style>
@@ -56,7 +76,7 @@ with col6:
     energy_prod_conv = st.checkbox('Energy Production and Conversion')
 
 
-html_str = f"""<hr>"""
+html_str = "<hr>"
 st.markdown(html_str, unsafe_allow_html=True)
 
 query = st.text_input("Please enter your search here... 👇")
@@ -64,29 +84,6 @@ srch_button = st.button("Search")
 # update_corpus = st.button("Update corpus")
 
 
-import os
-import json
-import PyPDF2
-import pickle
-import numpy as np  # np mean, np random
-import pandas as pd  # read csv, df manipulation
-import plotly.express as px  # interactive charts
-
-from PyPDF2 import PdfReader
-
-import nltk
-from nltk.probability import FreqDist
-
-
-from gensim import models
-from gensim import corpora
-from itertools import compress
-from gensim import similarities
-from collections import defaultdict
-
-from analytics import *
-from retrieval_system import *
-from get_title_and_abstract import *
 
 #%%
 
@@ -195,9 +192,9 @@ def get_title(doc_id, dataset_folder):
     return title
 
 
-def get_ttle_n_abs(doc_id, dataset_folder):
+# def get_ttle_n_abs(doc_id, dataset_folder):
     
-    return {'title': title, 'abstract':abstract}
+#     return {'title': title, 'abstract':abstract}
 
 
 def display_doc(title, abstract, score):
