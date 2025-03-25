@@ -1,0 +1,6 @@
+{
+    "id": 20000085978,
+    "subjectCategory": "Electronics and Electrical Engineering",
+    "title": "Discriminator Stabilized Superconductor/Ferroelectric Thin Film Local Oscillator",
+    "abstract": "A tunable local oscillator with a tunable circuit that includes a resonator and a transistor as an active element for oscillation. Tuning of the circuit is achieved with an externally applied dc bias across coupled lines on the resonator. Preferably the resonator is a high temperature superconductor microstrip ring resonator with integral coupled lines formed over a thin film ferroelectric material. A directional coupler samples the output of the oscillator which is fed into a diplexer for determining whether the oscillator is performing at a desired frequency. The high-pass and lowpass outputs of the diplexer are connected to diodes respectively for inputting the sampled signals into a differential operational amplifier. The amplifier compares the sampled signals and emits an output signal if there is a difference between the resonant and crossover frequencies. Based on the sampled signal, a bias supplied to the ring resonator is either increased or decreased for raising or lowering the resonant frequency by decreasing or increasing, respectively, the dielectric constant of the ferroelectric."
+}

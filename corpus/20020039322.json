@@ -1,0 +1,6 @@
+{
+    "id": 20020039322,
+    "subjectCategory": "Electronics and Electrical Engineering",
+    "title": "Inrush Current Control Circuit",
+    "abstract": "An inrush current control circuit having an input terminal connected to a DC power supply and an output terminal connected to a load capacitor limits the inrush current that charges up the load capacitor during power up of a system. When the DC power supply applies a DC voltage to the input terminal, the inrush current control circuit produces a voltage ramp at the load capacitor instead of an abrupt DC voltage. The voltage ramp results in a constant low level current to charge up the load capacitor, greatly reducing the current drain on the DC power supply."
+}

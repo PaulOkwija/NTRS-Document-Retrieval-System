@@ -1,0 +1,6 @@
+{
+    "id": 19970019926,
+    "subjectCategory": "Electronics and Electrical Engineering",
+    "title": "A Single-Block TRL Test Fixture for the Cryogenic Characterization of Planar Microwave Components",
+    "abstract": "The High-Temperature-Superconductivity (HTS) group of the RF Technology Branch, Space Electronics Division, is actively involved in the fabrication and cryogenic characterization of planar microwave components for space applications. This process requires fast, reliable, and accurate measurement techniques not readily available. A new calibration standard/test fixture that enhances the integrity and reliability of the component characterization process has been developed. The fixture consists of 50 omega thru, reflect, delay, and device under test gold lines etched onto a 254 microns (0.010 in) thick alumina substrate. The Thru-Reflect-Line (TRL) fixture was tested at room temperature using a 30 omega, 7.62 mm (300 mil) long, gold line as a known standard. Good agreement between the experimental data and the data modelled using Sonnet's em(C) software was obtained for both the return (S(sub 11)) and insertion (S( 21)) losses. A gold two-pole bandpass filter with a 7.3 GHz center frequency was used as our Device Under Test (DUT), and the results compared with those obtained using a Short-Open-Load-Thru (SOLT) calibration technique."
+}

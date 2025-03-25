@@ -90,7 +90,7 @@ from get_title_and_abstract import *
 
 #%%
 
-@st.cache()
+@st.cache_data()
 def get_nltk_resources():
     nltk.download('wordnet')
     nltk.download('omw-1.4')
@@ -102,7 +102,7 @@ def get_nltk_resources():
 
 get_nltk_resources()
 
-@st.cache
+@st.cache_data
 def get_docs(dataset_folder):
     files = os.listdir(dataset_folder)
     files = set(list(map(lambda x: x.split('.')[0], files)))
@@ -123,7 +123,7 @@ def get_docs(dataset_folder):
 
     return docs_dict
 
-@st.cache
+@st.cache_data
 def clean_docs(docs):
     # remove common words and tokenize
     stoplist = set('for a of the and to in'.split())
@@ -151,7 +151,7 @@ def clean_docs(docs):
     return texts
 
 
-@st.cache
+@st.cache_data
 def create_model(texts, num_topics=5):
     dictionary = corpora.Dictionary(texts)
     with open('dictionary.pickle', 'wb') as handle:
