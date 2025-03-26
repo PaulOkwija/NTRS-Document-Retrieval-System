@@ -1,6 +1,0 @@
-{
-    "id": 19990004617,
-    "subjectCategory": "Electronics and Electrical Engineering",
-    "title": "Accurate Cold-Test Model of Helical TWT Slow-Wave Circuits",
-    "abstract": "Recently, a method has been established to accurately calculate cold-test data for helical slow-wave structures using the three-dimensional electromagnetic computer code, MAFIA. Cold-test parameters have been calculated for several helical traveling-wave tube (TWT) slow-wave circuits possessing various support rod configurations, and results are presented here showing excellent agreement with experiment. The helical models include tape thickness, dielectric support shapes and material properties consistent with the actual circuits. The cold-test data from this helical model can be used as input into large-signal helical TWT interaction codes making it possible, for the first time, to design a complete TWT via computer simulation."
-}

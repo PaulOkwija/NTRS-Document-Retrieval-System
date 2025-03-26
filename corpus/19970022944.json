@@ -1,6 +1,0 @@
-{
-    "id": 19970022944,
-    "subjectCategory": "Electronics and Electrical Engineering",
-    "title": "High-Field Fast-Risetime Pulse Failures in 4H- and 6H-SiC pn Junction Diodes",
-    "abstract": "We report the observation of anomalous reverse breakdown behavior in moderately doped (2-3 x 10(exp 17 cm(exp -3)) small-area micropipe-free 4H- and 6H-SiC pn junction diodes. When measured with a curve tracer, the diodes consistently exhibited very low reverse leakage currents and sharp repeatable breakdown knees in the range of 140-150 V. However, when subjected to single-shot reverse bias pulses (200 ns pulsewidth, 1 ns risetime), the diodes failed catastrophically at pulse voltages of less than 100 V. We propose a possible mechanism for this anomalous reduction in pulsed breakdown voltage relative to dc breakdown voltage. This instability must be removed so that SiC high-field devices can operate with the same high reliability as silicon power devices."
-}

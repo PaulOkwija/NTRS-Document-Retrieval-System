@@ -1,6 +1,0 @@
-{
-    "id": 19960029326,
-    "subjectCategory": "Electronics and Electrical Engineering",
-    "title": "Coplanar stripline components for high frequency application",
-    "abstract": "In this paper, coplanar stripline discontinuities such as a slit, a right angle bend and a T-junction are characterized and their performance is parameterized with respect to frequency and geometry. Lumped equivalent circuits are presented for some of them. The element values are obtained from the measured discontinuity scattering (S) parameters. The experimental results are compared with theoretical data obtained using the Finite Difference Time Domain (FD-TD) technique for validation and show very good agreement."
-}

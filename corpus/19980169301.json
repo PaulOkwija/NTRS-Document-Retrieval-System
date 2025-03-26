@@ -1,6 +1,0 @@
-{
-    "id": 19980169301,
-    "subjectCategory": "Electronics and Electrical Engineering",
-    "title": "Micro-Coplanar Striplines: New Transmission Media for Microwave Applications",
-    "abstract": "In this paper a new transmission line for microwave applications, referred to here as the Micro-Coplanar Stripline (MCPS), is introduced. The propagation characteristics, such as, characteristic impedance (Z(sub 0) and effective dielectric constant (epsilon eff) for a range of MCPS geometries have been modeled using the Finite Difference Time Domain (FDTD) Technique and presented here. Also, preliminary experimental results on the performance of an MCP-Microstrip transition and an MCPS-fed patch antenna are presented. The results indicate several potential applications of the MCPS line in microwave integrated circuit technology."
-}

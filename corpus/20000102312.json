@@ -1,6 +1,0 @@
-{
-    "id": 20000102312,
-    "subjectCategory": "Electronics and Electrical Engineering",
-    "title": "Tera-Ops Processing for ATR",
-    "abstract": "A three-dimensional microelectronic device (3DANN-R) capable of performing general image convolution at the speed of 1012 operations/second (ops) in a volume of less than 1.5 cubic centimeter has been successfully built under the BMDO/JPL VIGILANTE program. 3DANN-R was developed in partnership with Irvine Sensors Corp., Costa Mesa, California. 3DANN-R is a sugar-cube-sized, low power image convolution engine that in its core computation circuitry is capable of performing 64 image convolutions with large (64x64) windows at video frame rates. This paper explores potential applications of 3DANN-R such as target recognition, SAR and hyperspectral data processing, and general machine vision using real data and discuss technical challenges for providing deployable systems for BMDO surveillance and interceptor programs."
-}
