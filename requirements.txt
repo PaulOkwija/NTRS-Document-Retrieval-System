@@ -1,5 +1,5 @@
 flashtext==2.7
-gensim==4.3.0
+gensim
 nltk==3.8.1
 numpy==1.24.4
 pandas==1.5.3
